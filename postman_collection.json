@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "20c48a0b-8c80-4b32-b5bb-89f220aa6552",
+		"name": "Maybank Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14609253"
+	},
+	"item": [
+		{
+			"name": "Generate Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/report/?search=Audy&sort&order&page&size",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Audy",
+							"description": "This is mandatory Field"
+						},
+						{
+							"key": "sort",
+							"value": null,
+							"description": "Optional field and this field can fill value followers, repositories, joined"
+						},
+						{
+							"key": "order",
+							"value": null,
+							"description": "optional field but default desc"
+						},
+						{
+							"key": "page",
+							"value": null,
+							"description": "optional field but default 1"
+						},
+						{
+							"key": "size",
+							"value": null,
+							"description": "optional field but default 10 and maximum 100"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Generate Report Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/?search=Audy&sort&order&page&size",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Audy",
+									"description": "This is mandatory Field"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "Optional field and this field can fill value followers, repositories, joined"
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional field but default desc"
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional field but default 1"
+								},
+								{
+									"key": "size",
+									"value": null,
+									"description": "optional field but default 10 and maximum 100"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"id\": 1,\n        \"filename\": \"20230525013821.pdf\",\n        \"downloadUrl\": \"/report/download/20230525013821\",\n        \"createdAt\": \"2023-05-25T01:38:22.3098786\",\n        \"historyExports\": []\n    },\n    \"message\": \"SUCCESS\"\n}"
+				},
+				{
+					"name": "Generate Report Param Invalid",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Audy",
+									"description": "This is mandatory Field",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "Optional field and this field can fill value followers, repositories, joined",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional field but default desc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional field but default 1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": null,
+									"description": "optional field but default 10 and maximum 100",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"VALIDATION_ERROR\",\n    \"errorMessage\": \"search param is required\"\n}"
+				},
+				{
+					"name": "Generate Report Page Over Size",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/?search=Audy&size=101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Audy",
+									"description": "This is mandatory Field"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "Optional field and this field can fill value followers, repositories, joined",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional field but default desc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional field but default 1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "101",
+									"description": "optional field but default 10 and maximum 100"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"PAGE_OVER_SIZE\",\n    \"errorMessage\": \"Page Size maximum 100\"\n}"
+				},
+				{
+					"name": "Generate Report No Record",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/?search=asdsadsjadlkajdslkajdasdl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "asdsadsjadlkajdslkajdasdl",
+									"description": "This is mandatory Field"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "Optional field and this field can fill value followers, repositories, joined",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional field but default desc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional field but default 1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": null,
+									"description": "optional field but default 10 and maximum 100",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"DATA_NO_RECORD\",\n    \"errorMessage\": \"No Record Found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Report List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/report/get-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"get-all"
+					],
+					"query": [
+						{
+							"key": "report_id",
+							"value": null,
+							"description": "optional if you want search by report_id",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Report List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"get-all"
+							],
+							"query": [
+								{
+									"key": "report_id",
+									"value": null,
+									"description": "optional if you want search by report_id",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": [\n        {\n            \"id\": 1,\n            \"filename\": \"20230525013821.pdf\",\n            \"downloadUrl\": \"/report/download/20230525013821\",\n            \"createdAt\": \"2023-05-25T01:38:22.309879\",\n            \"historyExports\": []\n        }\n    ],\n    \"message\": \"SUCCESS\"\n}"
+				},
+				{
+					"name": "Get All Report List Failed No Record",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"get-all"
+							],
+							"query": [
+								{
+									"key": "report_id",
+									"value": null,
+									"description": "optional if you want search by report_id",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"DATA_NO_RECORD\",\n    \"errorMessage\": \"No Record Found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get History Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/report/history-export",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"history-export"
+					],
+					"query": [
+						{
+							"key": "report_id",
+							"value": null,
+							"description": "optional if you want search by report_id",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get History Report",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/history-export?report_id=55555",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"history-export"
+							],
+							"query": [
+								{
+									"key": "report_id",
+									"value": "55555",
+									"description": "optional if you want search by report_id"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": [],\n    \"message\": \"SUCCESS\"\n}"
+				},
+				{
+					"name": "Get History Report",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/history-export",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"history-export"
+							],
+							"query": [
+								{
+									"key": "report_id",
+									"value": null,
+									"description": "optional if you want search by report_id",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"DATA_NO_RECORD\",\n    \"errorMessage\": \"No Record Found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Download Report Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/report/download/20230525013821",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"download",
+						"20230525013821"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Download Report Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/download/20230525013821",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"download",
+								"20230525013821"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "%PDF-1.5\r\n%����\r\n3 0 obj\r\n<</Filter/FlateDecode/Length 1091>>stream\r\nx�ś�n�8\u0014@��\r\n.;��$�gw3�\u0007P�@���Š(T[~\u0014��Jr���\u000f��q�6�N��B\u0016a�<W��=� cD�K�0⚛��Y��kVT\u0002q��lQ��\u0015'\u0005E\u001f컶\u001fF�޳���;�\bF�e���\u000f�\u0017�\f��~U���n�@L�o��Q\u001c�θ\u0015/�B����G�ʎ�]\u00073�\u000bb9\u0018�,k2п_�~�b}\u0018�d�9��ַ�\u0011.M�\u000f7�;}���QDE��Y!nZm���\u0017���cQj��������q�ߌ��w�eh�!�T\r\n#&XiB�7�\u0007\u0018�AP\u0014 0�c0��>� �4\u000b�`߁̺�n���n;��1h��\\�N��((&"
+				},
+				{
+					"name": "Download Report Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/download/20230525013821s",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"download",
+								"20230525013821s"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"DATA_NO_RECORD\",\n    \"errorMessage\": \"No Record Found\"\n}"
+				}
+			]
+		}
+	]
+}
