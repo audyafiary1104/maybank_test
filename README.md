@@ -88,6 +88,7 @@ The folder structure of the Maybank Test application is as follows:
     -   `com.maybank.test.repository`: Contains the repository interfaces for database operations.
     -   `com.maybank.test.service`: Contains the service interfaces and implementations.
     -   `com.maybank.test.util`: Contains utility classes and constants.
+    -   `com.maybank.test.config`: Contains classes responsible for configuring various components and settings within the application.
 -   `src/main/resources`: Contains the application configuration files.
 -   `src/test/java`: Contains the unit tests for the application.
 -   `postman_collection.json`: Contains the Postman collection for testing the API endpoints.
@@ -141,6 +142,9 @@ The folder structure of the Maybank Test application is as follows:
     -   Includes properties like response code and error message.
 11.  `ResponseCode` (Utility) :
     -   provide information about specific statuses or conditions within the APIs.
+11.  `HttpClientConfig` (Config) :
+    -   Configures the HttpClient used for making HTTP requests.
+    -   Interceptor All Request And Response.
 12.  `MaybankTestApplication`:
     -   The main entry point of the application.
     -   Configures and bootstraps the Spring Boot application.
