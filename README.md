@@ -69,7 +69,7 @@ To import the Postman collection and test the API endpoints, follow these steps:
     
 4.  Enter the following link and click "Continue":
     
-`https://raw.githubusercontent.com/audyafiary1104/maybank_test/main/postman_collection.json` 
+`https://raw.githubusercontent.com/audyafiary1104/maybank_test/master/postman_collection.json` 
 
     
 5.  The collection will be imported into Postman. You can now explore the available API endpoints and send requests.
