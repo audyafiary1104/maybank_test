@@ -57,11 +57,15 @@ public class HttpClientConfig {
         int page = Integer.parseInt(pageParam);
         if (page > 100)
             throw new CustomException(ResponseCode.RESPONSE_MAX_PAG,ResponseCode.MAX_PAGE_MESSAGE);
+
     }
 
     private void logResponse(ClientHttpResponse response) throws IOException {
+
         if (response.getStatusCode().equals(HttpStatus.UNPROCESSABLE_ENTITY)){
             throw new CustomException(ResponseCode.RESPONSE_VALIDATION,ResponseCode.VALIDATION_MESSAGE);
+        }else  if (response.getStatusCode().equals(HttpStatus.UNAUTHORIZED)){
+            throw new CustomException(ResponseCode.RESPONSE_UNAUTHORIZED,ResponseCode.UNAUTHORIZED_MESSAGE);
         }
     }
 

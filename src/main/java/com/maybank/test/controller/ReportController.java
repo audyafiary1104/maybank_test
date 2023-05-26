@@ -46,7 +46,7 @@ public class ReportController {
                 .body(resource);
     }
     @GetMapping("/history-export")
-    public ResponseEntity<SuccessResponse<List<HistoryExport>>> HistoryDownload(@RequestParam(value = "report_id",required = false) Long reportID) {
+    public ResponseEntity<SuccessResponse<List<HistoryExport>>> HistoryDownload(@RequestParam(value = "REPORT_ID",required = false) Long reportID) {
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(reportService.historyReport(reportID));

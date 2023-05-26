@@ -18,6 +18,9 @@ public class GithubClient {
     private RestTemplate restTemplate;
 
     public GithubResponse searchUsers(SearchDto searchDto) {
+           if (searchDto.getSize().isBlank() || searchDto.getSize().isEmpty())
+                searchDto.setSize(GlobalConstant.DEFAULT_SIZE_PAGE);
+
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromUriString(GlobalConstant.DEFAULT_URI)
                 .queryParam("q", searchDto.getSearch())
                 .queryParam("page",searchDto.getPage())

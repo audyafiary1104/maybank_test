@@ -7,6 +7,7 @@ import com.maybank.test.dto.response.GithubResponse;
 import com.maybank.test.exception.CustomException;
 import com.maybank.test.model.HistoryExport;
 import com.maybank.test.services.JasperService;
+import com.maybank.test.util.constant.GlobalConstant;
 import com.maybank.test.util.constant.ResponseCode;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
@@ -46,6 +47,10 @@ public class JasperServiceImpl implements JasperService {
     public String generateReport(SearchDto searchDto, GithubResponse githubResponse) {
         try {
             Resource reportResource = resourceLoader.getResource(templatePath);
+            if (searchDto.getPage().isBlank() || searchDto.getPage().isEmpty())
+                searchDto.setPage(GlobalConstant.DEFAULT_PAGE);
+            if (searchDto.getSize().isBlank() || searchDto.getSize().isEmpty())
+                searchDto.setSize(GlobalConstant.DEFAULT_SIZE_PAGE);
             File reportFile = reportResource.getFile();
             ObjectMapper objectMapper = new ObjectMapper();
 
