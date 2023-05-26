@@ -199,19 +199,7 @@ These naming conventions help maintain code readability, consistency, and follow
 
 Note: It's important to adhere to your team's coding guidelines and standards when it comes to naming conventions, as they may vary from project to project or organization to organization.
 
-### Importing the Postman Collection
 
-To import the Postman collection and test the API endpoints, follow these steps:
-
-1.  Open Postman.
-    
-2.  Click on the **Import** button.
-    
-3.  Select the **Link** tab.
-    
-4.  Enter the following URL:
-
-`https://raw.githubusercontent.com/audyafiary1104/maybank_test/main/postman_collection.json` 
 
 5.  Click the **Import** button.
     
